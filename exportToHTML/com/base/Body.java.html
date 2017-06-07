@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>Body.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(128,128,128); font-style: italic; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+Body.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">com.base; 
+ 
+</span><span class="s0">import </span><span class="s1">java.util.ArrayList; 
+</span><span class="s0">import </span><span class="s1">java.util.List; 
+ 
+</span><span class="s2">/** 
+ * Created by kubikulas on 4.6.17. 
+ */</span><span class="s1"> 
+ 
+ 
+</span><span class="s0">public class </span><span class="s1">Body </span><span class="s0">extends </span><span class="s1">Morg { 
+    </span><span class="s0">private int </span><span class="s1">max_morg_number; 
+    </span><span class="s0">private </span><span class="s1">List&lt;Body&gt; morgs_list; 
+    </span><span class="s0">private </span><span class="s1">Morg m; 
+    </span><span class="s0">private double </span><span class="s1">bMorg; 
+    </span><span class="s0">private double </span><span class="s1">cMorg; 
+ 
+    </span><span class="s2">// max_morg_number: the maximum allowed microorganism population</span><span class="s1"> 
+    </span><span class="s2">// bMorg, The probability of birth of the microorganism , value inherited from Morg (moBirth)</span><span class="s1"> 
+    </span><span class="s2">// cMorg, The probability of clear of the microorganism, value inherited from Morg (moclear)</span><span class="s1"> 
+    </span><span class="s2">// m - object, that contains moBirth and moClear</span><span class="s1"> 
+    </span><span class="s2">//morgs_list - is a list of microorganisms</span><span class="s1"> 
+ 
+    </span><span class="s0">public </span><span class="s1">Body(</span><span class="s0">double </span><span class="s1">bMorg, </span><span class="s0">double </span><span class="s1">cMorg) { 
+        </span><span class="s0">super</span><span class="s1">(bMorg, cMorg); 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">Body(List&lt;Body&gt; morgs_list, </span><span class="s0">int </span><span class="s1">max_morg_number) { 
+        </span><span class="s0">this</span><span class="s1">.morgs_list = morgs_list; 
+        </span><span class="s0">this</span><span class="s1">.max_morg_number = max_morg_number; 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">Body() { 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">String toString() { 
+        </span><span class="s0">return </span><span class="s3">&quot;main.java.com.base.Body: (&quot; </span><span class="s1">+ getbMorg() + </span><span class="s3">&quot;,&quot; </span><span class="s1">+ getcMorg() + </span><span class="s3">&quot;)&quot;</span><span class="s1">; 
+        </span><span class="s2">//prints the object's body</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public double </span><span class="s1">getbMorg() { 
+        </span><span class="s0">return super</span><span class="s1">.getMoBirth(); 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setbMorg(</span><span class="s0">double </span><span class="s1">bMorg) { 
+        </span><span class="s0">this</span><span class="s1">.bMorg = bMorg; 
+    } 
+ 
+    </span><span class="s0">public double </span><span class="s1">getcMorg() { 
+        </span><span class="s0">return super</span><span class="s1">.getMoClear(); 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setcMorg(</span><span class="s0">double </span><span class="s1">cMorg) { 
+        </span><span class="s0">this</span><span class="s1">.cMorg = cMorg; 
+    } 
+ 
+    </span><span class="s0">public int </span><span class="s1">getPop() { 
+ 
+        </span><span class="s2">//returns: The total microorganism population</span><span class="s1"> 
+ 
+        </span><span class="s0">return </span><span class="s1">morgs_list.size(); 
+    } 
+ 
+    </span><span class="s0">public int </span><span class="s1">getMax_morg_number() { 
+        </span><span class="s0">return </span><span class="s1">max_morg_number; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setMax_morg_number(</span><span class="s0">int </span><span class="s1">max_morg_number) { 
+        </span><span class="s0">this</span><span class="s1">.max_morg_number = max_morg_number; 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">List&lt;Body&gt; getMorgs_list() { 
+        </span><span class="s0">return </span><span class="s1">morgs_list; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setMorgs_list(List&lt;Body&gt; morgs_list) { 
+        </span><span class="s0">this</span><span class="s1">.morgs_list = morgs_list; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">getCurrentDensity() { 
+ 
+        </span><span class="s2">// getCurrentDensity updates microorganism population</span><span class="s1"> 
+        </span><span class="s2">// check if the microorganism have survived, then calculate the population density</span><span class="s1"> 
+        </span><span class="s2">// find out if the microorganism was born (moBirthNew) and add morg to the list (morgs_list)</span><span class="s1"> 
+ 
+        List&lt;Body&gt; alive_morgs_list = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;(); 
+        </span><span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s1">; i &lt; morgs_list.size(); i++) { 
+            </span><span class="s0">if </span><span class="s1">(!(morgs_list.get(i).moClear())) { 
+                alive_morgs_list.add(morgs_list.get(i)); 
+            } 
+            </span><span class="s2">// check if the morg survives</span><span class="s1"> 
+        } 
+ 
+        morgs_list = alive_morgs_list; 
+        </span><span class="s0">double </span><span class="s1">current_density = getPop() / max_morg_number; 
+        </span><span class="s2">// calculates the population density</span><span class="s1"> 
+        List&lt;Body&gt; morgs_c = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;(); 
+        </span><span class="s0">for </span><span class="s1">(Morg morg : morgs_list) { 
+            m = morg.moBirthNew(current_density); 
+            </span><span class="s0">if </span><span class="s1">(m != </span><span class="s0">null</span><span class="s1">) { 
+                morgs_c.add((Body) morg); 
+            } 
+            </span><span class="s2">// create a variable m that stores newly born microorganisms</span><span class="s1"> 
+            </span><span class="s2">// and check whether microorganism born (if variable m is not null)</span><span class="s1"> 
+        } 
+        morgs_list.addAll(morgs_c); 
+ 
+        </span><span class="s2">// add all born morgs to morgs_list</span><span class="s1"> 
+    } 
+}</span></pre>
+</body>
+</html>

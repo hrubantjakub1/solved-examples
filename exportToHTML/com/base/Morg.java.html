@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Morg.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(128,128,128); font-style: italic; }
+.s3 { color: rgb(0,0,255); }
+.s4 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+Morg.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">com.base; 
+ 
+</span><span class="s2">/** 
+ * Created by kubikulas on 4.6.17. 
+ */</span><span class="s1"> 
+</span><span class="s0">public class </span><span class="s1">Morg { 
+    </span><span class="s0">private double </span><span class="s1">moBirth; 
+    </span><span class="s0">private double </span><span class="s1">moClear; 
+ 
+    </span><span class="s0">public </span><span class="s1">Morg(</span><span class="s0">double </span><span class="s1">moBirth, </span><span class="s0">double </span><span class="s1">moClear) { 
+        </span><span class="s0">if </span><span class="s1">((moBirth &gt;= </span><span class="s3">0 </span><span class="s1">&amp;&amp; moBirth &lt;= </span><span class="s3">1</span><span class="s1">)) { 
+            setMoBirth(moBirth); 
+            </span><span class="s0">if </span><span class="s1">(moClear &gt;= </span><span class="s3">0 </span><span class="s1">&amp;&amp; moClear &lt;= </span><span class="s3">1</span><span class="s1">) { 
+                setMoClear(moClear); 
+            } </span><span class="s0">else throw new </span><span class="s1">AssertionError(); 
+        } </span><span class="s0">else throw new </span><span class="s1">AssertionError(); 
+ 
+        </span><span class="s2">// Initializating the value of the values moBirth, moClear and stores them as numeric values</span><span class="s1"> 
+        </span><span class="s2">// check if the variables is greater than or equal to 0 and less or equal to 1</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">Morg() { 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">String toString() { 
+        </span><span class="s0">return </span><span class="s4">&quot;main.java.com.base.Morg: (&quot; </span><span class="s1">+ moBirth + </span><span class="s4">&quot;, &quot; </span><span class="s1">+ moClear + </span><span class="s4">&quot;)&quot;</span><span class="s1">; 
+    } 
+ 
+    </span><span class="s0">public double </span><span class="s1">getMoBirth() { 
+        </span><span class="s0">return </span><span class="s1">moBirth; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setMoBirth(</span><span class="s0">double </span><span class="s1">moBirth) { 
+        </span><span class="s0">this</span><span class="s1">.moBirth = moBirth; 
+    } 
+ 
+    </span><span class="s0">public double </span><span class="s1">getMoClear() { 
+        </span><span class="s0">return </span><span class="s1">moClear; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setMoClear(</span><span class="s0">double </span><span class="s1">moClear) { 
+        </span><span class="s0">this</span><span class="s1">.moClear = moClear; 
+    } 
+ 
+    </span><span class="s0">public boolean </span><span class="s1">moClear() { 
+ 
+        </span><span class="s0">return </span><span class="s1">Math.random() &lt; getMoClear(); 
+ 
+        </span><span class="s2">// clear Morg Object if the random number is greater than getMoClear()</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">Morg moBirthNew(</span><span class="s0">double </span><span class="s1">moDens) { 
+ 
+        </span><span class="s0">if </span><span class="s1">(Math.random() &lt; moBirth * (</span><span class="s3">1 </span><span class="s1">- moDens)) { 
+            </span><span class="s2">// find out if a new microorganism (Morg) births,</span><span class="s1"> 
+            </span><span class="s2">// other microorganisms are born with less probability how the population grows</span><span class="s1"> 
+            </span><span class="s0">return new </span><span class="s1">Morg(getMoBirth(), moDens); 
+        } </span><span class="s0">else </span><span class="s1">{ 
+            </span><span class="s0">return null</span><span class="s1">; 
+            </span><span class="s2">// returns null if the microorganism does not multiply</span><span class="s1"> 
+        } 
+    } 
+}</span></pre>
+</body>
+</html>
