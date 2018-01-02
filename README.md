@@ -3,7 +3,7 @@
 Program consisting of disease.jar file and few files consisting of 
 class viewed in html, so you can see commented classes.
 
-program consist of three classes microorganisms, that create microorganism and its clear and reproduction probability, second class create update cycle that updates amount of microorganism and third class instantiate and create chart that prints chart. Chart describes amount of microorganism population on time.  
+program consist of three classes: microorganisms, that create microorganism and its clear and reproduction probability, second class create update cycle that updates amount of microorganism and third class instantiate and create chart that prints chart. Chart describes amount of microorganism population on time.  
 
 In this problem I implemented simulation of microorganisms behaviour in human body. 
 
